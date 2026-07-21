@@ -15,7 +15,7 @@ public class ClientesController : ControllerBase // Proporciona funciones de res
             new
             {
             Id= 1,
-            Nombre = "Juan Perez",
+            Nombre = "Juan M",
             Telefono= "77777776"
             },
             new
