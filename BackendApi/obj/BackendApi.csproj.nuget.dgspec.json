@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Nuevo\\BackendApi\\BackendApi.csproj": {}
+    "C:\\Prograw2\\BackendApi\\BackendApi.csproj": {}
   },
   "projects": {
-    "C:\\Nuevo\\BackendApi\\BackendApi.csproj": {
+    "C:\\Prograw2\\BackendApi\\BackendApi.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Nuevo\\BackendApi\\BackendApi.csproj",
+        "projectUniqueName": "C:\\Prograw2\\BackendApi\\BackendApi.csproj",
         "projectName": "BackendApi",
-        "projectPath": "C:\\Nuevo\\BackendApi\\BackendApi.csproj",
+        "projectPath": "C:\\Prograw2\\BackendApi\\BackendApi.csproj",
         "packagesPath": "C:\\Users\\HP\\.nuget\\packages\\",
-        "outputPath": "C:\\Nuevo\\BackendApi\\obj\\",
+        "outputPath": "C:\\Prograw2\\BackendApi\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"

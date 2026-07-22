@@ -34,7 +34,7 @@ public class ClientesController : ControllerBase // Proporciona funciones de res
         return Ok(clientes);
         
     }
-    [HttpGet("{id}")]
+    [HttpGet("{id}")] //get
     public IActionResult ObtenerClientePorId(int id)
     {
         var cliente = new
@@ -45,5 +45,23 @@ public class ClientesController : ControllerBase // Proporciona funciones de res
         };
         return Ok(cliente);
     }
-    
+    [HttpPost] //es un envio, un post
+    public IActionResult RegistrarCliente([FromBody] Cliente cliente)
+    {
+        return Ok(new
+        {
+            mensaje = "Cliente registrado correctamente",cliente
+        });
+    }
+    [HttpPut("{id}")]//put, q vamos a editar
+    public IActionResult ActualizarCliente(int id, [FromBody] Cliente cliente)
+    {
+        cliente.Id = id;
+        return Ok(new
+        {
+            mensaje = "Cliente actualizado",cliente
+        });
+    }
+
+
 }
