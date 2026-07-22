@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc;
-
+using BackendApi.Models; // models del usuario
 namespace BackendApi.Controllers;
 
 [ApiController]
@@ -35,7 +35,7 @@ public class UsuariosController : ControllerBase
 
     }
 
-    [HttpGet("{id}")]
+    [HttpGet("{id}")]//get
     public IActionResult ObtenerUsuarioPorId(int id)
     {
         var usuario = new
@@ -45,6 +45,33 @@ public class UsuariosController : ControllerBase
             Email = "ejemplo@coffe.com"
         };
         return Ok(usuario);
+    }
+    [HttpPost] //es un envio, un post
+    public IActionResult RegistrarUsuario([FromBody] Usuario usuario)
+    {
+        return Ok(new
+        {
+            mensaje = "Usuario registrado correctamente",
+            usuario
+        });
+    }
+    [HttpPut("{id}")]//put, q vamos a editar
+    public IActionResult ActualizarUsuario(int id, [FromBody] Usuario usuario)
+    {
+        usuario.Id = id;
+        return Ok(new
+        {
+            mensaje = "Usuario actualizado",
+            usuario
+        });
+    }
+    [HttpDelete("{id}")]
+    public IActionResult EliminarUsuario(int id)
+    {
+        return Ok(new
+        {
+            mensaje = $"Usuario {id} eliminado correctamente"
+        });
     }
 
 }
