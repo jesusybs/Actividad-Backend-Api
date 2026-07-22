@@ -42,3 +42,16 @@ npm run build
 ```sh
 npm run lint
 ```
+## usuarios pruebas - Api usuarios
+### POST
+![Registro de Melissa](evidencias/usuario-post.png)
+
+### GET
+![Consulta de Usuario](evidencias/usuario-get.png)
+
+### PUT
+![Actualizacion de Datos](evidencias/usuario-put1.png)
+![Actualizacion de Datos 2](evidencias/usuario-put2.png)
+
+### DELETE
+![Eliminacion de Usuario](evidencias/usuario-delete.png)
