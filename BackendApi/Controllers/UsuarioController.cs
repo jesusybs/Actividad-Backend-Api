@@ -16,19 +16,19 @@ public class UsuariosController : ControllerBase
             {
                 Id = 1,
                 Nombre = "Admin",
-                Email = "admin@ejemplo.com"
+                Email = "admin@coffe.com"
             },
             new
             {
                 Id = 2,
                 Nombre = "Usuario Normal",
-                Email = "usuario@ejemplo.com"
+                Email = "usuario@coffe.com"
             },
             new
             {
                 Id = 3,
                 Nombre = "Invitado",
-                Email = "invitado@ejemplo.com"
+                Email = "invitado@coffe.com"
             }
         };
         return Ok(usuarios);
@@ -42,7 +42,7 @@ public class UsuariosController : ControllerBase
         {
             Id = id,
             Nombre = "Usuario Ejemplo",
-            Email = "ejemplo@ejemplo.com"
+            Email = "ejemplo@coffe.com"
         };
         return Ok(usuario);
     }
