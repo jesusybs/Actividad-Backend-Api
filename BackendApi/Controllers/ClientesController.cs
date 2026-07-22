@@ -1,5 +1,5 @@
 using Microsoft.AspNetCore.Mvc; //Permite utlizar controladores,rutas y respuestas Http
-
+using BackendApi.Models; // models del Cliente
 namespace BackendApi.Controllers; 
 
 [ApiController] //Inidica que la clase funcionara como un controlador de una API
@@ -62,6 +62,13 @@ public class ClientesController : ControllerBase // Proporciona funciones de res
             mensaje = "Cliente actualizado",cliente
         });
     }
-
+    [HttpDelete ("{id}")]
+    public IActionResult EliminarCliente(int id)
+    {
+        return Ok(new
+        {
+            mensaje = $"Cliente {id} eliminado correctamente"
+        });
+    }
 
 }
