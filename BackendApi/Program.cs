@@ -9,7 +9,7 @@ builder.Services.AddCors(options =>
     options.AddPolicy("PermitirVue", policy =>
     {
         policy
-        .WithOrigins("http://localhost:5173")//cambiar dependiendo el puerto ejemp: 5230, 5289, 5208
+        .WithOrigins("http://localhost:5208")//cambiar dependiendo el puerto ejemp: 5230, 5289, 5208
         .AllowAnyHeader()
         .AllowAnyMethod();
     });

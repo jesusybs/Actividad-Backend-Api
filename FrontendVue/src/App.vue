@@ -1,11 +1,18 @@
-<script setup></script>
+<script setup>
+  import ListaProducto from './components/ListaProductos.vue'
+</script>
 
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <main>
+    <h1>Gestion de Productos</h1>
+    <p>Bienvenido al sistema de administracion de productos.</p>
+    <ListaProducto titulo="Catalogo Actual"
+                   subtitulo="Datos obtenidos desde el Backend" />
+  </main>
 </template>
 
-<style scoped></style>
+<style scoped>
+  main {
+    padding: 2rem;
+  }
+</style>

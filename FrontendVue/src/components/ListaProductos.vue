@@ -1,40 +1,40 @@
-//Estructura general
 <script setup>
+  import { ref, onMounted } from 'vue'
+  import axios from 'axios'
 
-import{ref, onMounted} from 'vue'
-//crear las variables reactivas
-import { ref } from 'vue'
+  // Recibimos las props del padre
+  defineProps({
+    titulo: String,
+    subtitulo: String
+  })
 
-import axios from 'axios'
-const productos = ref([]) //Guarda la lista recibida desde la API
-const cargango = ref(false) // Permite mostrar un mensaje mientras se realiza la solicitud
-const error = ref('')//Guarda un mensaje si la API no responde
-const obtenerProductos= async () =>
-{
-    cargango.value=true
-    error.value=''
+  const productos = ref([])
+  const cargando = ref(false)
+  const error = ref('')
 
+  const obtenerProductos = async () => {
+    cargando.value = true
     try {
-
-       const respuesta = await axios.get( // ESpera la respuesta de la API
-           'https://localhost:5173/api/productos'
-       )
-       productos.value = respuesta.data //Contiene el JSON enviado por .NET core
-    } catch (e){
-    console.error(e)
-    error.value=
-    'No fue posible obtener los productos desde API'
-    } finally { //Se va a ejecutar si la consulta funciona o falla
-     cargango.value= false
+      const respuesta = await axios.get('https://localhost:5208/api/producto')
+      productos.value = respuesta.data
+    } catch (e) {
+      error.value = 'Error al cargar productos'
+    } finally {
+      cargando.value = false
     }
-}
-onMounted(() =>  {//Permite ejecutar la consulta cuando el componente ya fue montado en la interfaz
- obtenerProductos()
-})
+  }
 
+  onMounted(obtenerProductos)
 </script>
+
 <template>
   <div class="container mt-4">
-    <h2> Lista de Productos </h2>
+    <h2>{{ titulo }}</h2>
+    <p>{{ subtitulo }}</p>
+
+    <div v-if="cargando">Cargando...</div>
+    <ul v-else>
+      <li v-for="p in productos" :key="p.id">{{ p.nombre }}</li>
+    </ul>
   </div>
 </template>
